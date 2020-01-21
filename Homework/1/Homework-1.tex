@@ -37,76 +37,37 @@ Represent this game in the extensive form (draw the game tree).
 
     % Owner decision
     \node(0)[solid node, label=above:{$Owner$}]{}
-        % Manager decision (Owner Hires)
-        child{node(1)[solid node]{}
-            % Worker Decision (Manager Hires and Owner Hires)
-            child{node[solid node]{}
-                % Payoffs
-                child{node[hollow node, label=below:{$(-1,-1,1)$}]{} edge from parent node[left]{$Shirks$}}
-                child{node[hollow node, label=below:{$(1,0,0)$}]{} edge from parent node[right]{$Diligent$}}
-                % Manager Hire edge
-                edge from parent node[left]{$Hires$}
-            }
-            child{node[solid node]{}
-                % Payoffs
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[left, xshift=-5, yshift=-10]{$Shirks$}}
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[right]{$Diligent$}}
-                % Manager Refuse edge
-                edge from parent node[right]{$Refuses$}
-            }
-            % Owner Hires edge
-            edge from parent node[left, xshift=-10]{$Hires$}
-        }
-        % Manager decision (Owner refuses)
-        child{node(2)[solid node]{}
-            % Worker decision (Manager Hires and Owner refuses)
-            child{node[solid node]{}
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[left]{$Shirks$}}
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[right]{$Diligent$}}
-                %Manager Hires edge
-                edge from parent node[left]{$Hires$}
-            }
-            % Worker decision (Manager refuses and Owner refuses)
-            child{node[solid node]{}
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[left, xshift=-5, yshift=-10]{$Shirks$}}
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[right]{$Diligent$}}
-                %Manager Refuses edge
-                edge from parent node[right]{$Refuses$}
-            }
-            % Owner Refuses edge
-            edge from parent node[right]{$Refuses$}
-        }
         % Manager decision (Owner defers)
-        child{node(3)[solid node]{}
+        child{node(1)[solid node, label=right:{$Manager$}]{}
+            % Worker decision (Manager refuses and Owner defers)
+            child{node[hollow node, label=below:{(0,0,0)}]{} edge from parent node[left]{$Refuses$}}
             % Worker decision (Manager Hires and Owner defers)
             child{node[solid node]{}
                 child{node[hollow node, label=below:{$(-1,-1,1)$}]{} edge from parent node[left]{$Shirks$}}
                 child{node[hollow node, label=below:{$(0,1,1)$}]{} edge from parent node[right]{$Diligent$}}
                 %Manager Hires edge
-                edge from parent node[left]{$Hires$}
-            }
-            % Worker decision (Manager refuses and Owner defers)
-            child{node[solid node]{}
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[left, xshift=-5, yshift=-10]{$Shirks$}}
-                child{node[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[right]{$Diligent$}}
-                %Manager Refuses edge
-                edge from parent node[right]{$Refuses$}
+                edge from parent node[right]{$Hires$}
             }
             % Owner Defers edge
-            edge from parent node[right, xshift=10]{$Defers$}
+            edge from parent node[left]{$Defers$}
         }
+        % Manager decision (Owner Hires)
+        child[level distance=50mm]{node(2)[solid node]{}
+            % Payoffs
+            child{node[hollow node, label=below:{$(-1,-1,1)$}]{} edge from parent node[left]{$Shirks$}}
+            child{node[hollow node, label=below:{$(1,0,0)$}]{} edge from parent node[right]{$Diligent$}}
+            % Owner Hires edge
+            edge from parent node[left]{$Hires$}
+        }
+        % Manager decision (Owner refuses)
+        child{node(3)[hollow node, label=below:{$(0,0,0)$}]{} edge from parent node[right]{$Refuses$}}
     ;
 
     % Information set for Worker's Decision
-    \draw[dashed,rounded corners=5]($(1-1)+(-.25,.25)$)rectangle($(3-2)+(.25,-.25)$);
+    \draw[dashed,rounded corners=5]($(1-2)+(-.25,.25)$)rectangle($(2)+(.25,-.25)$);
+    % Worker label
+    \node at ($(1-2)!.5!(2)$) {$Worker$};
 
-    % Manager labels at level 2
-    \node at ($(1)!.5!(2)$) {$Manager$};
-    \node at ($(2)!.5!(3)$) {$Manager$};
-    % Worker Labels at level 3
-    \node at ($(1-1)!.5!(1-2)$) {$Worker$};
-    \node at ($(2-1)!.5!(2-2)$) {$Worker$};
-    \node at ($(3-1)!.5!(3-2)$) {$Worker$};
 
 \end{tikzpicture}
 \end{center}
@@ -196,16 +157,69 @@ On observing the worker's effort the manager chooses to retain or fire the worke
 In this game, does "not hire" describe a strategy for the manager? Explain.
 \\
 \newline
-%TODO: Search for this
-Check if a strategy has to include trees that cannot be visited.
+``Not hire" does not describe a strategy for the manager since it does not include how to play at every information set for the manager.
+To make this a strategy the manager must also have some way to decide to retain or fire the worker.
 
 \section*{Question 5}
 Consider the prisoners' dilemma we discussed in class, with the following twist.
-If both prisoners choose the same strategy (defect or cooperate) the payoffs are as in the original prisoners' dilemma: when both cooperate each gets a payoff of 2 and if both defect each gets 1. However, if one of them defects and the other cooperates, the one cooperating is given the opportunity to revise his decision. If he does not revise when the payoffs are 3 for the one defecting and 0 for the one cooperating. If he switches ta defect then he gets 1.5 and the other prisoner gets 1.
+If both prisoners choose the same strategy (defect or cooperate) the payoffs are as in the original prisoners' dilemma: when both cooperate each gets a payoff of 2 and if both defect each gets 1. However, if one of them defects and the other cooperates, the one cooperating is given the opportunity to revise his decision. If he does not revise when the payoffs are 3 for the one defecting and 0 for the one cooperating. If he switches to defect then he gets 1.5 and the other prisoner gets 1.
 
 \begin{enumerate}
 \item[(a)] Derive the extensive form of the game.
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize, scale=.75]
+    \tikzstyle{level 1}=[level distance=25mm, sibling distance=110mm]
+    \tikzstyle{level 2}=[level distance=25mm, sibling distance=55mm]
+    \tikzstyle{level 3}=[level distance=25mm, sibling distance=25mm]
+    \tikzstyle{level 4}=[level distance=25mm, sibling distance=12mm]
+
+    % Player 1 decides
+    \node(0)[solid node, label=above:{Player 1}]{}
+        % Player 1 decides Defect
+        child{node(1)[solid node]{}
+            % Player 2 decides Defect P1 Defect
+            child{node[hollow node, label=below:{(1,1)}]{} edge from parent node[left]{D}}
+            % Player 2 decides Cooperate P1 Defect
+            child{node[solid node, label=right:{Player 2}]{}
+                % Player 2 can change
+                child{node[hollow node, label=below:{$(1.5,1)$}]{} edge from parent node[left]{D}}
+                child{node[hollow node, label=below:{$(3,0)$}]{} edge from parent node[right]{C}}
+                edge from parent node[right]{C}
+            }
+            edge from parent node[left]{D}
+        }
+        % Player 1 decides Cooperate
+        child{node(2)[solid node]{}
+            % Player 2 decides Defect P1 Coop
+            child{node[solid node, label=left:{Player 1}]{}
+                % Player 1 can change
+                child{node[hollow node, label=below:{$(1,1.5)$}]{} edge from parent node[left]{D}}
+                child{node[hollow node, label=below:{$(0,3)$}]{} edge from parent node[right]{C}}
+                edge from parent node[left]{D}
+            }
+            % Player 2 decides Cooperate P1 Coop
+            child{node[hollow node,label=below:{$(2,2)$}]{} edge from parent node[right]{C}}
+            edge from parent node[right]{C}
+        }
+    ;
+
+    % Player 2 information set
+    \draw[dashed,rounded corners=5]($(1)+(-.25,.25)$)rectangle($(2)+(.25,-.25)$);
+    % Player 2 level 1 labels
+    \node at ($(1)!.5!(2)$) {Player 2};
+
+\end{tikzpicture}
+\end{center}
 \item[(b)] Derive the normal for of the game.
+\begin{center}
+\begin{game}{4}{4}[Player 2][Player 1][C=Cooperate, D=Defect]
+    &   C,C     &   C,D     &   D,C     &   D,D     \\
+C,C &   2,2     &   2,2     &   3,0     &   3,0     \\
+C,D &   2,2     &   2,2     &   1.5,1   &   1.5,1   \\
+D,C &   0,3     &   1,1.5   &   1,1     &   1,1     \\
+D,D &   0,3     &   1,1.5   &   1,1     &   1,1     \\
+\end{game}
+\end{center}
 \end{enumerate}
 
 \end{document}
