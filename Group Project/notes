@@ -13,13 +13,21 @@ Corporations (Embed into the choices)
 
 What are the actions available
 -----------------------
-Propose the bill (Democrats)
-Vote on bill     (Both)
+Propose the bill (Both)
+Wait to propose bill (Both)
+Vote on election (Public last player)
+Vote on bill     (Republicans/Democrats)
+President vote
+
+First Republican
+Second Democrats
+Public
 
 
 What is the timing of actions and the information available to each player?
 -----------------------
 Bill Proposal timing can be chosen (Before/After 2020 elections)
 Congress member must all vote at once
-Information is available to everyone
+Information is available to everyone (Each party doesn't know if other will wait for election)
+General flow: Wait -> propose -> vote -> president vote
 
