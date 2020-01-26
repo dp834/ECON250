@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+    \tikzstyle{hollow node} = [circle,draw,inner sep=1.5]
+    \tikzstyle{solid node}  = [circle,draw,inner sep=1.5,fill=black]
+    \usetikzlibrary{calc}
+\usepackage{sgame}
+    \gamemathtrue
+\usepackage[shortlabels]{enumitem}
+
+\author{Damien Prieur}
+\title{Problem Set 2 \\ ECON 250}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{WATSON 4.2}
+Suppose we have a game where $S_1 = {H,L}$ and $S_2 = {X,Y}$.
+If player 1 plays $H$, then her payoff is $z$ regardless of player 2's choice of strategy;
+player 1's other payoff numbers are $u_1 (L,X) = 0$ and $u_1 (L,Y) = 10$.
+You may choose any payoff number you like for player 2 because we will only be concerned with player 1's payoff.
+\begin{enumerate}[(a)]
+\item Draw the normal form of this game.
+
+\item If player 1's belief is $\theta_2 = (\frac{1}{2},\frac{1}{2})$, what is player 1's expected payoff of playing $H$?
+What is his expected payoff of playing $L$?
+For what value of $z$ is player 1 indifferent between playing $H$ and $L$.
+
+\item Suppose $\theta_2 = (\frac{1}{3},\frac{2}{3})$. Find player 1's expected payoff of playing $L$.
+\end{enumerate}
+
+
+\pagebreak
+\section{WATSON 6.6}
+In the game pictured here, is it ever rational for player 1 to select strategy C? Why?
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize,
+                    arrow/.style={edge from parent/.style={draw,-latex}},
+                    grow' = right
+                    ]
+\tikzstyle{level 1}=[level distance=25mm, sibling distance=35mm]
+\tikzstyle{level 2}=[level distance=25mm, sibling distance=15mm]
+
+    \node(0)[solid node, label=above:{1}]{}
+        child[sibling distance=0]{node[draw=none]{} edge from parent[draw=none]}
+        child[arrow]{node[solid node]{}
+            child[arrow]{node[hollow node, label=right:{$3,0$}]{} edge from parent node[above]{X}}
+            child[arrow]{node[hollow node, label=right:{$0,3$}]{} edge from parent node[below]{Y}}
+            edge from parent node[above]{A}
+        }
+        child[arrow]{node[solid node]{}
+            child[arrow]{node[hollow node, label=right:{$0,3$}]{} edge from parent node[above]{X}}
+            child[arrow]{node[hollow node, label=right:{$3,0$}]{} edge from parent node[below]{Y}}
+            edge from parent node[below]{B}
+        }
+        child[grow'=down, arrow, level distance=15mm]{node[hollow node, label=below:{$1,1$}]{} edge from parent node[right]{C}}
+    ;
+
+    \draw[dashed,rounded corners=5]($(0-2)+(-.25,.25)$)rectangle($(0-3)+(.25,-.25)$);
+    \node at ($(0-2)!.5!(0-3)$) {2};
+
+
+\end{tikzpicture}
+\end{center}
+
+\pagebreak
+\section{Game Matrix}
+Derive the game matrix of the game described in Exercise 4 of Chapter 2.
+\begin{center}
+\begin{game}{3}{3}
+    &    L    &    C    &   R   \\
+T   &   3,1   &   0,0   &  4,1  \\
+M   &   10,0  &   2,2   &  4,3  \\
+B   &   7,6   &   1,2   &  3,1  \\
+\end{game}
+\end{center}
+
+\begin{enumerate}[(a)]
+\item Find all the strictly dominated (pure) strategies for each player.
+\item Find all the weakly dominated (pure) strategies for each player.
+\item Does the game have a strictly dominant strategy equilibrium?
+\end{enumerate}
+
+
+\pagebreak
+\section{Legal Battle}
+Two players find themselves in a legal battle over a patent.
+The patent is worth 20 for each player, so the winner would receive 20 and the loser 0.
+Given the norms of the country they are in, it is common to bribe the judge of a case.
+Each player can secretly offer a bribe of 0,9 or 20, and the one whose bribe is largest is awarded the patent.
+If both players choose not to bribe, or if the bribes are the same amount, then each has an equal chance of being awarded the patent.
+(If a player decides to bribe then he pays the judge regardless of who gets the patent).
+
+\begin{enumerate}[(a)]
+\item Derive the game matrix.
+\item Is the game dominance solvable? If so, find the strategy profile surviving IDSDS.
+\end{enumerate}
+\end{document}
