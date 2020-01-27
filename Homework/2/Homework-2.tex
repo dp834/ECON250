@@ -8,6 +8,7 @@
 \usepackage{sgame}
     \gamemathtrue
 \usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
 
 \author{Damien Prieur}
 \title{Problem Set 2 \\ ECON 250}
@@ -25,11 +26,31 @@ You may choose any payoff number you like for player 2 because we will only be c
 \begin{enumerate}[(a)]
 \item Draw the normal form of this game.
 
+\begin{center}
+\begin{game}{2}{2}[Player 1][Player 2]
+    &    X    &    Y    \\
+H   &   z,0   &   z,0   \\
+L   &   0,0   &   10,0  \\
+\end{game}
+\newline
+\newline
+Note: Player 2 has a payoff of 0 for everything.
+\end{center}
+
+
 \item If player 1's belief is $\theta_2 = (\frac{1}{2},\frac{1}{2})$, what is player 1's expected payoff of playing $H$?
 What is his expected payoff of playing $L$?
 For what value of $z$ is player 1 indifferent between playing $H$ and $L$.
 
+$$ \text{Expected payoff from H} = \frac{1}{2} \times z + \frac{1}{2} \times z = z $$
+$$ \text{Expected payoff from L} = \frac{1}{2} \times 0 + \frac{1}{2} \times 10 = 5 $$
+Player 1 is indifferent when
+$$\text{Expected payoff from H} = \text{Expected payoff from L} \Rightarrow z = 5$$
+
 \item Suppose $\theta_2 = (\frac{1}{3},\frac{2}{3})$. Find player 1's expected payoff of playing $L$.
+$$ \text{Expected payoff from L} = \frac{1}{3} \times 0 + \frac{2}{3} \times 10 = \frac{20}{3} \approx 6.666 $$
+
+
 \end{enumerate}
 
 
@@ -60,17 +81,20 @@ In the game pictured here, is it ever rational for player 1 to select strategy C
     ;
 
     \draw[dashed,rounded corners=5]($(0-2)+(-.25,.25)$)rectangle($(0-3)+(.25,-.25)$);
-    \node at ($(0-2)!.5!(0-3)$) {2};
-
 
 \end{tikzpicture}
 \end{center}
 
+It is never rational for player 1 to select strategy C.
+If player 1 uses a strategy where they choose between A and B with equal probability then their expected payoff is $\frac{3}{2}$.
+This assumes the opponent is also playing rationally as they do not know what our decision is and should also be picking between X and Y equally.
+Since the expected payoff is greater with this strategy there is no reason to pick C.
+
 \pagebreak
 \section{Game Matrix}
-Derive the game matrix of the game described in Exercise 4 of Chapter 2.
+Consider the following game matrix:
 \begin{center}
-\begin{game}{3}{3}
+\begin{game}{3}{3}[Player 1][Player 2]
     &    L    &    C    &   R   \\
 T   &   3,1   &   0,0   &  4,1  \\
 M   &   10,0  &   2,2   &  4,3  \\
@@ -80,8 +104,21 @@ B   &   7,6   &   1,2   &  3,1  \\
 
 \begin{enumerate}[(a)]
 \item Find all the strictly dominated (pure) strategies for each player.
+% strictly dominated strategies: a different strategy is strictly better for that player
+\newline
+Player 1: B is strictly dominated by M
+\newline
+Player 2: No strategy is strictly dominated
 \item Find all the weakly dominated (pure) strategies for each player.
+% weakly dominated strategies: a different strategy is at least as good as the current strategy
+\newline
+Player 1: T is weakly dominated by M
+\newline
+Player 2: No strategy is weakly dominated
+
 \item Does the game have a strictly dominant strategy equilibrium?
+\newline
+Since neither player 1 or 2 has a strictly dominant solution the game does not have a strictly dominant strategy equilibrium.
 \end{enumerate}
 
 
@@ -96,6 +133,15 @@ If both players choose not to bribe, or if the bribes are the same amount, then 
 
 \begin{enumerate}[(a)]
 \item Derive the game matrix.
+\newline
+\begin{center}
+\begin{game}{3}{3}[Player 1][Player 2]
+    &    0    &    9    &   20      \\
+0   &  10,10  &  0,11   &   0,0     \\
+9   &  11,0   &  1,1    &  -9,0     \\
+20  &  0,0    &  20,-9  &  -10,-10  \\
+\end{game}
+\end{center}
 \item Is the game dominance solvable? If so, find the strategy profile surviving IDSDS.
 \end{enumerate}
 \end{document}
