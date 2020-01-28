@@ -139,9 +139,28 @@ If both players choose not to bribe, or if the bribes are the same amount, then 
     &    0    &    9    &   20      \\
 0   &  10,10  &  0,11   &   0,0     \\
 9   &  11,0   &  1,1    &  -9,0     \\
-20  &  0,0    &  20,-9  &  -10,-10  \\
+20  &  0,0    &  0,-9   &  -10,-10  \\
 \end{game}
 \end{center}
 \item Is the game dominance solvable? If so, find the strategy profile surviving IDSDS.
+\newline
+Since the game is symmetric an argument about strict dominance will apply to both sides.
+Bribing \$20 is strictly dominated by bribing \$9 so we can eliminate bribing \$20 for both players which gives us a new game matrix.
+\begin{center}
+\begin{game}{2}{2}[Player 1][Player 2]
+    &    0    &    9    \\
+0   &  10,10  &  0,11   \\
+9   &  11,0   &  1,1    \\
+\end{game}
+\end{center}
+Now bribing 0 is strictly dominated by bribing 9 so we can eliminate bribing 0.
+This game is solvable with IDSDS which reduces to each player bribing 9 with each player having an expected payoff of 1.
+\begin{center}
+\begin{game}{1}{1}[Player 1][Player 2]
+    &    9    \\
+9   &  1,1    \\
+\end{game}
+\end{center}
+
 \end{enumerate}
 \end{document}
