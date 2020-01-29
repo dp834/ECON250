@@ -7,6 +7,7 @@
     \usetikzlibrary{calc}
 \usepackage{sgame}
     \gamemathtrue
+\usepackage{verbatim}
 
 \author{Green New Deal Group}
 \title{Game tree}
@@ -22,13 +23,13 @@
     \tikzstyle{level 3}=[level distance=25mm, sibling distance=30mm]
     \tikzstyle{level 4}=[level distance=25mm, sibling distance=15mm]
 
-    \node(0)[solid node, label=above:{Republican}]{}
+    \node(0)[solid node, label=above:{Democrats}]{}
         child{node[solid node, label=left:{Public}]{}
             child{node[hollow node, label=below:{P1}]{} edge from parent node[left]{NF}}
             child{node[hollow node, label=below:{P2}]{} edge from parent node[right]{F}}
             edge from parent node[left, xshift=-5]{NP}
         }
-        child{node[solid node, label=right:{Democrats}]{}
+        child{node[solid node, label=right:{Republican}]{}
             child{node[solid node, label=left:{Public}]{}
                 child{node[hollow node, label=below:{P3}]{} edge from parent node[left]{NF}}
                 child{node[hollow node, label=below:{P4}]{} edge from parent node[right]{F}}
@@ -58,8 +59,8 @@
 \end{tikzpicture}
 \end{center}
 
-\begin{game}{8}{2}[Public][President][Republicans Pick P, Democrats Pick NP]
-          &   V  &  NV  \\
+\begin{game}{8}{2}[Public][President][Democrats Pick P, Republicans Pick NP]
+              &   V  &  NV  \\
 (NF, NF, NR)  &  P3  &  P3  \\
 (NF, NF, R)   &  P3  &  P3  \\
 (NF, F, NR)   &  P4  &  P4  \\
@@ -70,8 +71,8 @@
 (F, F, R)     &  P4  &  P4  \\
 \end{game}
 
-\begin{game}{8}{2}[Public][President][Republican Pick P, Democrats Pick P]
-          &   V  &  NV  \\
+\begin{game}{8}{2}[Public][President][Democrats Pick P, Republican Pick P]
+              &   V  &  NV  \\
 (NF, NF, NR)  &  P5  &  P7  \\
 (NF, NF, R)   &  P6  &  P8  \\
 (NF, F, NR)   &  P5  &  P7  \\
@@ -82,8 +83,10 @@
 (F, F, R)     &  P6  &  P8  \\
 \end{game}
 
-\begin{game}{8}{2}[Public][President][Republicans Pick NP, Democrats Pick NP]
-          &   V  &  NV  \\
+% Not analyzing this far up tree
+\begin{comment}
+\begin{game}{8}{2}[Public][President][Democrats Pick NP, Republicans Pick NP]
+              &   V  &  NV  \\
 (NF, NF, NR)  &  P1  &  P1  \\
 (NF, NF, R)   &  P1  &  P1  \\
 (NF, F, NR)   &  P1  &  P1  \\
@@ -94,8 +97,8 @@
 (F, F, R)     &  P2  &  P2  \\
 \end{game}
 
-\begin{game}{8}{2}[Public][President][Republican Pick NP, Democrats Pick P]
-          &   V  &  NV  \\
+\begin{game}{8}{2}[Public][President][Democrats Pick NP, Republicans Pick P]
+              &   V  &  NV  \\
 (NF, NF, NR)  &  P1  &  P1  \\
 (NF, NF, R)   &  P1  &  P1  \\
 (NF, F, NR)   &  P1  &  P1  \\
@@ -105,5 +108,5 @@
 (F, F, NR)    &  P2  &  P2  \\
 (F, F, R)     &  P2  &  P2  \\
 \end{game}
-
+\end{comment}
 \end{document}
