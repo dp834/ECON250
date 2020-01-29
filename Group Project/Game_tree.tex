@@ -8,21 +8,102 @@
 \usepackage{sgame}
     \gamemathtrue
 
-\author{Damien Prieur}
-\title{Problem Set 1 \\ ECON 250}
+\author{Green New Deal Group}
+\title{Game tree}
 \date{}
 
 \begin{document}
+%\maketitle
 
 \begin{center}
-\begin{tikzfigure}
+\begin{tikzpicture}
+    \tikzstyle{level 1}=[level distance=25mm, sibling distance=80mm]
+    \tikzstyle{level 2}=[level distance=25mm, sibling distance=50mm]
+    \tikzstyle{level 3}=[level distance=25mm, sibling distance=30mm]
+    \tikzstyle{level 4}=[level distance=25mm, sibling distance=15mm]
 
-    \node(0)[solid node, label=above:{LABEL}]{}
-        
+    \node(0)[solid node, label=above:{Republican}]{}
+        child{node[solid node, label=left:{Public}]{}
+            child{node[hollow node, label=below:{P1}]{} edge from parent node[left]{NF}}
+            child{node[hollow node, label=below:{P2}]{} edge from parent node[right]{F}}
+            edge from parent node[left, xshift=-5]{NP}
+        }
+        child{node[solid node, label=right:{Democrats}]{}
+            child{node[solid node, label=left:{Public}]{}
+                child{node[hollow node, label=below:{P3}]{} edge from parent node[left]{NF}}
+                child{node[hollow node, label=below:{P4}]{} edge from parent node[right]{F}}
+                edge from parent node[left]{NP}
+            }
+            child{node[solid node, label=right:{President}]{}
+                child{node[solid node]{}
+                    child{node[hollow node, label=below:{P5}]{} edge from parent node[left]{NR}}
+                    child{node[hollow node, label=below:{P6}]{} edge from parent node[right]{R}}
+                    edge from parent node[left]{V}
+                }
+                child{node[solid node]{}
+                    child{node[hollow node, label=below:{P7}]{} edge from parent node[left]{NR}}
+                    child{node[hollow node, label=below:{P8}]{} edge from parent node[right]{R}}
+                    edge from parent node[right]{NV}
+                }
+                edge from parent node[right]{P}
+            }
+            edge from parent node[right, xshift=5]{P}
+        }
     ;
 
-\end{tikzfigure}
+    \draw[dashed,rounded corners=5]($(0-2-2-1)+(-.25,.25)$)rectangle($(0-2-2-2)+(.25,-.25)$);
+
+    \node at ($(0-2-2-1)!.5!(0-2-2-2)$) {Public};
+
+\end{tikzpicture}
 \end{center}
 
-\maketitle
+\begin{game}{8}{2}[Public][President][Republicans Pick P, Democrats Pick NP]
+          &   V  &  NV  \\
+(NF, NF, NR)  &  P3  &  P3  \\
+(NF, NF, R)   &  P3  &  P3  \\
+(NF, F, NR)   &  P4  &  P4  \\
+(NF, F, R)    &  P4  &  P4  \\
+(F, NF, NR)   &  P3  &  P3  \\
+(F, NF, R)    &  P3  &  P3  \\
+(F, F, NR)    &  P4  &  P4  \\
+(F, F, R)     &  P4  &  P4  \\
+\end{game}
+
+\begin{game}{8}{2}[Public][President][Republican Pick P, Democrats Pick P]
+          &   V  &  NV  \\
+(NF, NF, NR)  &  P5  &  P7  \\
+(NF, NF, R)   &  P6  &  P8  \\
+(NF, F, NR)   &  P5  &  P7  \\
+(NF, F, R)    &  P6  &  P8  \\
+(F, NF, NR)   &  P5  &  P7  \\
+(F, NF, R)    &  P6  &  P8  \\
+(F, F, NR)    &  P5  &  P7  \\
+(F, F, R)     &  P6  &  P8  \\
+\end{game}
+
+\begin{game}{8}{2}[Public][President][Republicans Pick NP, Democrats Pick NP]
+          &   V  &  NV  \\
+(NF, NF, NR)  &  P1  &  P1  \\
+(NF, NF, R)   &  P1  &  P1  \\
+(NF, F, NR)   &  P1  &  P1  \\
+(NF, F, R)    &  P1  &  P1  \\
+(F, NF, NR)   &  P2  &  P2  \\
+(F, NF, R)    &  P2  &  P2  \\
+(F, F, NR)    &  P2  &  P2  \\
+(F, F, R)     &  P2  &  P2  \\
+\end{game}
+
+\begin{game}{8}{2}[Public][President][Republican Pick NP, Democrats Pick P]
+          &   V  &  NV  \\
+(NF, NF, NR)  &  P1  &  P1  \\
+(NF, NF, R)   &  P1  &  P1  \\
+(NF, F, NR)   &  P1  &  P1  \\
+(NF, F, R)    &  P1  &  P1  \\
+(F, NF, NR)   &  P2  &  P2  \\
+(F, NF, R)    &  P2  &  P2  \\
+(F, F, NR)    &  P2  &  P2  \\
+(F, F, R)     &  P2  &  P2  \\
+\end{game}
+
 \end{document}
