@@ -1,0 +1,46 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+    \tikzstyle{hollow node} = [circle,draw,inner sep=1.5]
+    \tikzstyle{solid node}  = [circle,draw,inner sep=1.5,fill=black]
+    \usetikzlibrary{calc}
+\usepackage{sgame}
+    \gamemathtrue
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+
+\author{Damien Prieur}
+\title{Problem Set 2 \\ ECON 250}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Differentiated Bertrand Competition}
+\emph{Differentiated Bertrand Competition}.
+There are two firms $i = 1, 2$ simultaneously choosing prices $p_{i} \in [0,1]$.
+The demand of firm $i$ is $(D_{i}(p_{i},p_{-i})= 1-3p_{i} + p_{-i}$ and it has zero production costs.
+That is, firm $i$'s payoff is $p_{i}D_{i}(p_{i},p_{-i})$.
+
+\begin{enumerate}[(a)]
+
+\item Find the best response function of firm $i$.
+\newline
+
+\item Find the set of 1-rationalizable, 2-rationalizable, and 3-rationalizable strategies.
+\newline
+
+\item Find the unique PSNE.
+\newline
+
+\end{enumerate}
+
+\section{Guessing Game}
+Consider the following Guessing Game.
+There are $n = 10$ players simultaneously choosing a number in ${1,2,3}$.
+The winners are the closest to $\frac{1}{2}$ the average guess (they even split the prize between the winners if there is more than one).
+Find the set of rationalizable strategy profiles. Justify your answer.
+
+\end{document}
