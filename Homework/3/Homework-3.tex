@@ -29,20 +29,43 @@ That is, firm $i$'s payoff is $p_{i}D_{i}(p_{i},p_{-i})$.
 \item Find the best response function of firm $i$.
 \newline
 $$u_{i}(p_{i},p_{-i}) = p_{i} ( 1 - 3p_{i} + p_{-i})$$
-$$\frac{\partial u_{i}}{\partial p_{i}} = 1$$
+$$\frac{\partial u_{i}}{\partial p_{i}} = p_{i}(-3) + (1-3p_{i}+p_{-i}) = -6p_{i} + p_{-i} + 1$$
+Setting equal to zero to find the maximum we get
+$$ \frac{\partial u_{i}}{\partial p_{i}} = 0 \Rightarrow -6p_{i} + p_{-i} + 1 = 0 \Rightarrow p_{i} = \frac{p_{-i} + 1}{6}$$
+So for each player we have
+$$ BR_{1}(p_2) = \frac{p_2+1}{6} \qquad BR_{2}(p_1) = \frac{p_1+1}{6}$$
 
 \item Find the set of 1-rationalizable, 2-rationalizable, and 3-rationalizable strategies.
 \newline
+1-rationalizable - best response to some $\sigma_{-i}$.
+Best response range for all inputs = $BR_{i}(0) = \frac{1}{6}$ and $BR_{i}(1) = \frac{1}{3}$.
+Since the $BR$ function is linear then we know that the range of 1-rationalizable strategies is $p_{i}\in[\frac{1}{6}, \frac{1}{3}]$
+\newline
+Repeating this same logic but with the 1-rationalizable strategies as the domain we get $BR_{i}(\frac{1}{6}) = \frac{7}{36}$ and $BR_{i}(\frac{1}{3}) = \frac{2}{9}$.
+So our range of 2-rationalizable strategies is $p_{i} \in [\frac{7}{36},\frac{2}{9}]$.
+\newline
+Doing one more substitution we get $BR_{i}(\frac{7}{36}) = \frac{43}{216}$ and $BR_{i}(\frac{2}{9}) = \frac{11}{54}$.
+So our range of 3-rationalizable strategies is $p_{i} \in [\frac{43}{216},\frac{11}{54}]$.
 
 \item Find the unique PSNE.
 \newline
-
+When are both players best responding to each other? \\
+$$ BR_{i}(BR_{-i}(p_{i})) = p_{i} \Rightarrow \frac{\frac{p_{i} + 1}{6} + 1}{6} = p_{i} $$
+$$\frac{p_{i} + 7}{6} = 6p_{i} \Rightarrow p_{i} = \frac{7}{35} = \frac{1}{5} = 0.2$$
+The unique PSNE for this is for both players to play $0.2$ giving a strategy profile $(.2,.2)$.
 \end{enumerate}
 
 \section{Guessing Game}
 Consider the following Guessing Game.
-There are $n = 10$ players simultaneously choosing a number in ${1,2,3}$.
+There are $n = 10$ players simultaneously choosing a number in $\{1,2,3\}$.
 The winners are the closest to $\frac{1}{2}$ the average guess (they even split the prize between the winners if there is more than one).
 Find the set of rationalizable strategy profiles. Justify your answer.
+\newline
+\newline
+It is never rational to pick 3 as your number. If everyone picks 3 then the average will be 3 as well, and the winner will be the player closest to 1.5.
+Therefore you could get the whole prize if you guessed two if everyone guessed 3 and should never pick 3 as your guess.
+By the same logic if everyone is aware that 3 is strategy that never wins  everyone will choose between $\{1,2\}$.
+Applying the same logic as before 2 will never be picked as picking 1 strictly dominates 2.
+The set of rationalizable strategy profiles is everyone chooses 1 which causes the payout to be split evenly between everyone.
 
 \end{document}
