@@ -8,6 +8,8 @@
 \usepackage{sgame}
     \gamemathtrue
 \usepackage{verbatim}
+\usepackage{xcolor}
+\colorlet{NashEquilibirum}{green!10!orange!90!}
 
 \author{Green New Deal Group}
 \title{Game tree}
@@ -59,11 +61,11 @@
 \end{center}
 
 \begin{game}{8}{2}[Public][President][Democrats Pick P, Republicans Pick NP]
-              &   V  &  NV  \\
+              &   V                                 &                NV                   \\
 (NF, NF, NR)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
 (NF, NF, R)   &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
-(NF, F, NR)   &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  (-2,\phantom{-}2,-1,\phantom{-}2)  \\
-(NF, F, R)    &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  (-2,\phantom{-}2,-1,\phantom{-}2)  \\
+(NF, F, NR)   &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  \color{NashEquilibirum}(-2,\phantom{-}2,-1,\phantom{-}2)  \\
+(NF, F, R)    &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  \color{NashEquilibirum}(-2,\phantom{-}2,-1,\phantom{-}2)  \\
 (F, NF, NR)   &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
 (F, NF, R)    &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
 (F, F, NR)    &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  (-2,\phantom{-}2,-1,\phantom{-}2)  \\
@@ -74,10 +76,10 @@
               &   V  &  NV  \\
 (NF, NF, NR)  &  (-1,\phantom{-}1,-1,-2)            &  (\phantom{-}3,-3,\phantom{-}1,-4)  \\
 (NF, NF, R)   &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
-(NF, F, NR)   &  (-1,\phantom{-}1,-1,-2)            &  (\phantom{-}3,-3,\phantom{-}1,-4)  \\
+(NF, F, NR)   &  (-1,\phantom{-}1,-1,-2)            &  \color{NashEquilibirum}(\phantom{-}3,-3,\phantom{-}1,-4)  \\
 (NF, F, R)    &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
 (F, NF, NR)   &  (-1,\phantom{-}1,-1,-2)            &  (\phantom{-}3,-3,\phantom{-}1,-4)  \\
-(F, NF, R)    &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
+(F, NF, R)    &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  \color{NashEquilibirum}(\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
 (F, F, NR)    &  (-1,\phantom{-}1,-1,-2)            &  (\phantom{-}3,-3,\phantom{-}1,-4)  \\
 (F, F, R)     &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
 \end{game}
@@ -86,26 +88,32 @@
 \begin{comment}
 \begin{game}{8}{2}[Public][President][Democrats Pick NP, Republicans Pick NP]
               &   V  &  NV  \\
-(NF, NF, NR)  &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(NF, NF, R)   &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(NF, F, NR)   &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(NF, F, R)    &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(F, NF, NR)   &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
-(F, NF, R)    &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
-(F, F, NR)    &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
-(F, F, R)     &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
+(NF, NF, NR)  &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(NF, NF, R)   &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(NF, F, NR)   &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(NF, F, R)    &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(F, NF, NR)   &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
+(F, NF, R)    &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
+(F, F, NR)    &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
+(F, F, R)     &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
 \end{game}
 
 \begin{game}{8}{2}[Public][President][Democrats Pick NP, Republicans Pick P]
               &   V  &  NV  \\
-(NF, NF, NR)  &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(NF, NF, R)   &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(NF, F, NR)   &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(NF, F, R)    &  (-1,1,-1,1)  &  (-1,1,-1,1)  \\
-(F, NF, NR)   &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
-(F, NF, R)    &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
-(F, F, NR)    &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
-(F, F, R)     &  (-2,2,-1,2)  &  (-2,2,-1,2)  \\
+(NF, NF, NR)  &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(NF, NF, R)   &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(NF, F, NR)   &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(NF, F, R)    &  (-1,1,1,-1)  &  (-1,1,1,-1)  \\
+(F, NF, NR)   &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
+(F, NF, R)    &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
+(F, F, NR)    &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
+(F, F, R)     &  (-2,2,2,-1)  &  (-2,2,2,-1)  \\
 \end{game}
 \end{comment}
+
+Key:
+\newline
+Payoffs: (Democrats, Republican, President, Public) \\
+\color{NashEquilibirum}Nash Equilibirums \\
+
 \end{document}
