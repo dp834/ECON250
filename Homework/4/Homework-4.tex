@@ -28,6 +28,11 @@ Determine all of the Nash Equilibiria (pure-strategy and mixed-strategy equilibi
 H   &   1,-1  &   -1,1  \\
 T   &   -1,1  &   1,-1  \\
 \end{game}
+\newline
+PSNE: None, game of pure conflict \\
+MSNE: $u_{1}((p,1-p), H) = p - (1-p)$ and $u_{1}((p, 1-p), T) = -p + (1 - p) \implies 2p-1 = -2p + 1 \implies p = \frac{1}{2}$
+Due to the symmetry of the game player 2 will have the same result which gives us a mixed strategy nash equilibrium with $\sigma_{1}=(.5,.5)$ and $\sigma_{2}=(.5,.5)$.
+
 
 \item
 \begin{game}{2}{2}[Player 1][Player 2]
@@ -35,6 +40,10 @@ T   &   -1,1  &   1,-1  \\
 C   &   2,2   &   0,3   \\
 D   &   3,0   &   1,1   \\
 \end{game}
+\newline
+PSNE: (D, D) \\
+MSNE:
+$$ u_{1}((p,1-p), C) = u_{1}((p,1-p), D) \implies 2p + 3(1-p) = 0p + 1(1-p) \implies -p + 3 = 1 - p \implies 3=1$$
 
 \item
 \begin{game}{2}{2}[Player 1][Player 2]
@@ -42,6 +51,12 @@ D   &   3,0   &   1,1   \\
 H   &   2,2   &   3,1   \\
 D   &   3,1   &   2,2   \\
 \end{game}
+\newline
+PSNE: None\\
+MSNE: \\
+$$ u_{1}((p,1-p), H) = u_{1}((p,1-p), D) \implies 2p + 3(1-p) = 3p + 2(1-p) \implies -p + 3 = p + 2 \implies p = \frac{1}{2}$$
+$$ u_{2}(H, (p,1-p)) = u_{2}(D, (p,1-p)) \implies 2p + (1-p) = p - 2(1-p) \implies p + 1 = 3p -2 \implies p = \frac{3}{4}$$
+Which gives us a MSNE of $\sigma_{1} = (.5,.5)$ and $\sigma_{2} = (.75, .25)$
 
 \item
 \begin{game}{2}{2}[Player 1][Player 2]
@@ -49,6 +64,12 @@ D   &   3,1   &   2,2   \\
 A   &   1,4   &   2,0   \\
 B   &   0,8   &   3,9   \\
 \end{game}
+\newline
+PSNE: (A, A), (B,B) \\
+MSNE: \\
+$$ u_{1}((p,1-p), A) = u_{1}((p,1-p), B) \implies p + 0(1-p) = 2p + 3(1-p) \implies p = -p + 3 \implies p = \frac{3}{2}$$
+$$ u_{2}(A, (p,1-p)) = u_{2}(B, (p,1-p)) \implies 4p + 0(1-p) = 8p + 9(1-p) \implies 4p = 9 - p \implies p = \frac{9}{5}$$
+Which gives us a MSNE of $\sigma_{1} = (1.5,-.5)$ and $\sigma_{2} = (1.8, -.8)$
 
 \item
 \begin{game}{2}{2}[Player 1][Player 2]
@@ -56,6 +77,11 @@ B   &   0,8   &   3,9   \\
 A   &   2,2   &   0,0   \\
 B   &   0,0   &   3,4   \\
 \end{game}
+PSNE: (A, A), (B,B) \\
+MSNE: \\
+$$ u_{1}((p,1-p), A) = u_{1}((p,1-p), B) \implies 2p + 0(1-p) = 0p + 3(1-p) \implies 2p = 3 - 3p \implies p = \frac{3}{5}$$
+$$ u_{2}(A, (p,1-p)) = u_{2}(B, (p,1-p)) \implies 2p + 0(1-p) = 0p + 4(1-p) \implies 2p = 4 - 4p \implies p = \frac{2}{3}$$
+Which gives us a MSNE of $\sigma_{1} = (\frac{3}{5},\frac{2}{5})$ and $\sigma_{2} = (\frac{2}{3}, \frac{1}{3})$
 
 \item
 \begin{game}{3}{3}[Player 1][Player 2]
@@ -64,6 +90,13 @@ U   &   8,1   &   0,2   &   4,3   \\
 C   &   3,1   &   4,4   &   0,0   \\
 D   &   5,0   &   3,3   &   1,4   \\
 \end{game}
+L is strictly dominated by M and can be removed.
+C is dominated by $\sigma_{1} = (.75, 0, .25) $ and can be removed.
+PSNE: (C, M), (U,R) \\
+MSNE: \\
+$$ u_{1}((p, q, 1-p-q), M)  = u_{1}((p, q, 1-p-q), R) \implies 4q + 3(1-p-q) = 4p + (1 - p - q) \implies 3 + q -3p = 1 + 3p -q \implies p = \frac{1+q}{3} $$
+$$ u_{2}(U, (p,1-p)) = u_{2}(C, (p,1-p)) = u_{2}(D, (p,1-p)) \implies 2p + 3(1-p) = 4p + 0(1-p) = 3p + 4(1-p) \implies 3-p = 4p = 4-p \implies p = \frac{2}{3}$$
+Which gives us a MSNE of $\sigma_{1} = (\frac{3}{5},\frac{2}{5})$ and $\sigma_{2} = (\frac{2}{3}, \frac{1}{3})$
 
 \end{enumerate}
 
