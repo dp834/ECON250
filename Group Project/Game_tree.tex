@@ -27,24 +27,24 @@
 
     \node(0)[solid node, label=above:{Democrats}]{}
         child{node[solid node, label=left:{Public}]{}
-            child{node[hollow node, label=below:{(-1,1,-1,1)}]{} edge from parent node[left]{NF}}
-            child{node[hollow node, label=below:{(-2,2,-1,2)}]{} edge from parent node[right]{F}}
+            child{node[hollow node, label=below:{(-1,1,1,-1)}]{} edge from parent node[left]{NF}}
+            child{node[hollow node, label=below:{(-2,2,2,-1)}]{} edge from parent node[right]{F}}
             edge from parent node[left, xshift=-5]{NP}
         }
         child{node[solid node, label=right:{Republican}]{}
             child{node[solid node, label=left:{Public}]{}
-                child{node[hollow node, label=below:{(-1,1,-1,1)}]{} edge from parent node[left]{NF}}
-                child{node[hollow node, label=below:{(-2,2,-1,2)}]{} edge from parent node[right]{F}}
+                child{node[hollow node, label=below:{(-1,1,1,-1)}]{} edge from parent node[left]{NF}}
+                child{node[hollow node, label=below:{(-2,2,2,-1)}]{} edge from parent node[right]{F}}
                 edge from parent node[left]{NP}
             }
             child{node[solid node, label=right:{President}]{}
-                child{node[solid node]{} child{node[hollow node, label=below:{(-1,1,-1,-2)}]{} edge from parent node[left]{NR}}
-                    child{node[hollow node, label=below:{(-2,2,-1,3)}]{} edge from parent node[right]{R}}
+                child{node[solid node]{} child{node[hollow node, label=below:{(-1,1,-2,-1)}]{} edge from parent node[left]{NR}}
+                    child{node[hollow node, label=below:{(-2,2,3,-1)}]{} edge from parent node[right]{R}}
                     edge from parent node[left]{V}
                 }
                 child{node[solid node]{}
-                    child{node[hollow node, label=below:{(3,-3,1,-4)}]{} edge from parent node[left]{NR}}
-                    child{node[hollow node, label=below:{(2,1,1,2)}]{} edge from parent node[right]{R}}
+                    child{node[hollow node, label=below:{(3,-3,-4,1)}]{} edge from parent node[left]{NR}}
+                    child{node[hollow node, label=below:{(2,1,2,1)}]{} edge from parent node[right]{R}}
                     edge from parent node[right]{NV}
                 }
                 edge from parent node[right]{P}
@@ -62,26 +62,26 @@
 
 \begin{game}{8}{2}[Public][President][Democrats Pick P, Republicans Pick NP]
               &   V                                 &                NV                   \\
-(NF, NF, NR)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
-(NF, NF, R)   &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
-(NF, F, NR)   &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  \color{NashEquilibirum}(-2,\phantom{-}2,-1,\phantom{-}2)  \\
-(NF, F, R)    &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  \color{NashEquilibirum}(-2,\phantom{-}2,-1,\phantom{-}2)  \\
-(F, NF, NR)   &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
-(F, NF, R)    &  (-1,\phantom{-}1,-1,\phantom{-}1)  &  (-1,\phantom{-}1,-1,\phantom{-}1)  \\
-(F, F, NR)    &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  (-2,\phantom{-}2,-1,\phantom{-}2)  \\
-(F, F, R)     &  (-2,\phantom{-}2,-1,\phantom{-}2)  &  (-2,\phantom{-}2,-1,\phantom{-}2)  \\
+(NF, NF, NR)  &  (-1,\phantom{-}1,\phantom{-}1,-1)  &  (-1,\phantom{-}1,\phantom{-}1,-1)  \\
+(NF, NF, R)   &  (-1,\phantom{-}1,\phantom{-}1,-1)  &  (-1,\phantom{-}1,\phantom{-}1,-1)  \\
+(NF, F, NR)   &  (-2,\phantom{-}2,\phantom{-}2,-1)  &  (-2,\phantom{-}2,\phantom{-}2,-1)  \\
+(NF, F, R)    &  (-2,\phantom{-}2,\phantom{-}2,-1)  &  (-2,\phantom{-}2,\phantom{-}2,-1)  \\
+(F, NF, NR)   &  (-1,\phantom{-}1,\phantom{-}1,-1)  &  (-1,\phantom{-}1,\phantom{-}1,-1)  \\
+(F, NF, R)    &  (-1,\phantom{-}1,\phantom{-}1,-1)  &  (-1,\phantom{-}1,\phantom{-}1,-1)  \\
+(F, F, NR)    &  (-2,\phantom{-}2,\phantom{-}2,-1)  &  (-2,\phantom{-}2,\phantom{-}2,-1)  \\
+(F, F, R)     &  (-2,\phantom{-}2,\phantom{-}2,-1)  &  (-2,\phantom{-}2,\phantom{-}2,-1)  \\
 \end{game}
 
 \begin{game}{8}{2}[Public][President][Democrats Pick P, Republican Pick P]
               &   V  &  NV  \\
-(NF, NF, NR)  &  (-1,\phantom{-}1,-1,-2)            &  (\phantom{-}3,-3,\phantom{-}1,-4)  \\
-(NF, NF, R)   &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
-(NF, F, NR)   &  (-1,\phantom{-}1,-1,-2)            &  \color{NashEquilibirum}(\phantom{-}3,-3,\phantom{-}1,-4)  \\
-(NF, F, R)    &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
-(F, NF, NR)   &  (-1,\phantom{-}1,-1,-2)            &  (\phantom{-}3,-3,\phantom{-}1,-4)  \\
-(F, NF, R)    &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  \color{NashEquilibirum}(\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
-(F, F, NR)    &  (-1,\phantom{-}1,-1,-2)            &  (\phantom{-}3,-3,\phantom{-}1,-4)  \\
-(F, F, R)     &  (-2,\phantom{-}2,-1,\phantom{-}3)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}1,\phantom{-}2)  \\
+(NF, NF, NR)  &  (-1,\phantom{-}1,-2          ,-1)  &  (\phantom{-}3,-3,-4, \phantom{-}1)  \\
+(NF, NF, R)   &  (-2,\phantom{-}2,\phantom{-}3,-1)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}2,\phantom{-}1)  \\
+(NF, F, NR)   &  (-1,\phantom{-}1,-2          ,-1)  &  (\phantom{-}3,-3,-4,\phantom{-}1)  \\
+(NF, F, R)    &  (-2,\phantom{-}2,\phantom{-}3,-1)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}2,\phantom{-}1)  \\
+(F, NF, NR)   &  (-1,\phantom{-}1,-2          ,-1)  &  (\phantom{-}3,-3,-4,\phantom{-}1)  \\
+(F, NF, R)    &  (-2,\phantom{-}2,\phantom{-}3,-1)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}2,\phantom{-}1)  \\
+(F, F, NR)    &  (-1,\phantom{-}1,-2          ,-1)  &  (\phantom{-}3,-3,-4,\phantom{-}1)  \\
+(F, F, R)     &  (-2,\phantom{-}2,\phantom{-}3,-1)  &  (\phantom{-}2,\phantom{-}1,\phantom{-}2,\phantom{-}1)  \\
 \end{game}
 
 % Not analyzing this far up tree
