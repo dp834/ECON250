@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+    \tikzstyle{hollow node} = [circle,draw,inner sep=1.5]
+    \tikzstyle{solid node}  = [circle,draw,inner sep=1.5,fill=black]
+    \usetikzlibrary{calc}
+\usepackage{sgame}
+    \gamemathtrue
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+
+\author{Damien Prieur}
+\title{Problem Set 4 \\ ECON 250}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{WATSON Chapter 11, Exercise 6}
+Determine all of the Nash Equilibiria (pure-strategy and mixed-strategy equilibira) of the following games.
+
+\begin{enumerate}[(a)]
+\item
+\begin{game}{2}{2}[Player 1][Player 2]
+    &    H    &    T    \\
+H   &   1,-1  &   -1,1  \\
+T   &   -1,1  &   1,-1  \\
+\end{game}
+
+\item
+\begin{game}{2}{2}[Player 1][Player 2]
+    &    C    &    D    \\
+C   &   2,2   &   0,3   \\
+D   &   3,0   &   1,1   \\
+\end{game}
+
+\item
+\begin{game}{2}{2}[Player 1][Player 2]
+    &    H    &    D    \\
+H   &   2,2   &   3,1   \\
+D   &   3,1   &   2,2   \\
+\end{game}
+
+\item
+\begin{game}{2}{2}[Player 1][Player 2]
+    &    A    &    B    \\
+A   &   1,4   &   2,0   \\
+B   &   0,8   &   3,9   \\
+\end{game}
+
+\item
+\begin{game}{2}{2}[Player 1][Player 2]
+    &    A    &    B    \\
+A   &   2,2   &   0,0   \\
+B   &   0,0   &   3,4   \\
+\end{game}
+
+\item
+\begin{game}{3}{3}[Player 1][Player 2]
+    &    L    &    M    &    R    \\
+U   &   8,1   &   0,2   &   4,3   \\
+C   &   3,1   &   4,4   &   0,0   \\
+D   &   5,0   &   3,3   &   1,4   \\
+\end{game}
+
+\end{enumerate}
+
+\end{document}
