@@ -14,6 +14,7 @@
 \author{Green New Deal Group}
 \title{Game tree}
 \date{}
+\AtBeginDocument{\colorlet{defaultcolor}{.}}
 
 \begin{document}
 %\maketitle
@@ -27,14 +28,14 @@
 
     \node(0)[solid node, label=above:{Democrats}]{}
         child{node[solid node, label=left:{Public}]{}
-            child{node[hollow node, label=below:{(-1,1,1,-1)}]{} edge from parent node[left]{NF}}
-            child{node[hollow node, label=below:{(-2,2,2,-1)}]{} edge from parent node[right]{F}}
+            child{node[hollow node, label=below:{(-1,1,-1,1)}]{} edge from parent node[left]{NF}}
+            child{node[hollow node, label=below:{(-2,2,-1,2)}]{} edge from parent node[right]{F}}
             edge from parent node[left, xshift=-5]{NP}
         }
         child{node[solid node, label=right:{Republican}]{}
             child{node[solid node, label=left:{Public}]{}
-                child{node[hollow node, label=below:{(-1,1,1,-1)}]{} edge from parent node[left]{NF}}
-                child{node[hollow node, label=below:{(-2,2,2,-1)}]{} edge from parent node[right]{F}}
+                child{node[hollow node, label=below:{(-1,1,-1,1)}]{} edge from parent node[left]{NF}}
+                child{node[hollow node, label=below:{(-2,2,-1,2)}]{} edge from parent node[right]{F}}
                 edge from parent node[left]{NP}
             }
             child{node[solid node, label=right:{President}]{}
