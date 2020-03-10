@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{sgame}
+    \gamemathtrue
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+
+\author{Damien Prieur}
+\title{Problem Set 7 \\ ECON 250}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+Two players play a repeated game in which they play the following stage game twice, and discount payoffs by $0 < \delta < 1$.
+\begin{center}
+\begin{game}{2}{2}
+    &  $h$  &  $d$  \\
+$H$ &  0,0  &  3,1  \\
+$D$ &  1,2  &  2,2  \\
+\end{game}
+\end{center}
+
+\begin{enumerate}[(a)]
+\item Find all the SPNE in non-contingent strategies. Focus only on pure strategies.
+\newline
+\newline
+First we must find the PSNE at each stage of the game.
+In our case we have $\{(D,h), (H,d)\}$.
+Each of the SPNE is a combination of playing these PSNE regardless of history.
+
+\begin{enumerate}[1.]
+\item $s_1(h^t) = D \text{ and } s_2(h^t) = h $
+\item $s_1(h^t) = H \text{ and } s_2(h^t) = d $
+\end{enumerate}
+
+\item Find the conditions under which playing $(D,d)$ can be part of a SPNE.
+\newline
+\newline
+Attempt a grim trigger strategy $s_2(h^1) = d$ and $s_2(h^2) = h$ if $h^2 = Hd$  and $s_2(h^2) = d$ if $h^2 \neq Hd$.
+\newline
+Payoff from player 1 playing $H$ at $t=1:$ at most $3 + \delta(1)$
+\newline
+Payoff from player 1 playing $D$ at $t=1:$ at most $2 + \delta(3)$
+\newline
+If $\delta \geq 0.5$ then $(D,d)$ is part of a SPNE if
+\newline
+$s_1(h^1) = D \text{ and } s_1(h^2) = H$ and $s_2(h^1) = d$ and $s_2(h^2) = h$ if $h^2 = Hd$  and $s_2(h^2) = d$ if $h^2 \neq Hd$.
+
+
+
+\end{enumerate}
+\end{document}
